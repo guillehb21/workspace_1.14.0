@@ -1,0 +1,580 @@
+23:20:31 **** Incremental Build of configuration Debug for project base_microros ****
+make -j8 all 
+docker pull microros/micro_ros_static_library_builder:humble && docker run --rm -v /home/guille/STM32CubeIDE/workspace_1.14.0/base_microros:/project --env MICROROS_LIBRARY_FOLDER=micro_ros_stm32cubemx_utils/microros_static_library_ide microros/micro_ros_static_library_builder:humble
+humble: Pulling from microros/micro_ros_static_library_builder
+Digest: sha256:d73ee0cb5d320c42fab269f638e706b67123fe2e50fc13a25af02f739893ca4b
+Status: Image is up to date for microros/micro_ros_static_library_builder:humble
+docker.io/microros/micro_ros_static_library_builder:humble
+dos2unix: converting file /project/micro_ros_stm32cubemx_utils/microros_static_library_ide/library_generation/library_generation.sh to Unix format...
+micro-ROS library found. Skipping...
+Delete micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/ for rebuild.
+ 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'subscription_callback_ancle_left_reference':
+../Core/Src/main.c:62:40: warning: unused variable 'msg' [-Wunused-variable]
+   62 |         const std_msgs__msg__Float32 * msg = (const std_msgs__msg__Float32 *)msgin;
+      |                                        ^~~
+../Core/Src/main.c: In function 'subscription_callback_knee_left_reference':
+../Core/Src/main.c:76:40: warning: unused variable 'msg' [-Wunused-variable]
+   76 |         const std_msgs__msg__Float32 * msg = (const std_msgs__msg__Float32 *)msgin;
+      |                                        ^~~
+../Core/Src/main.c: In function 'subscription_callback_heap_left_reference':
+../Core/Src/main.c:89:40: warning: unused variable 'msg' [-Wunused-variable]
+   89 |         const std_msgs__msg__Float32 * msg = (const std_msgs__msg__Float32 *)msgin;
+      |                                        ^~~
+../Core/Src/main.c: In function 'subscription_callback_aux_id_left_reference':
+../Core/Src/main.c:102:40: warning: unused variable 'msg' [-Wunused-variable]
+  102 |         const std_msgs__msg__Float32 * msg = (const std_msgs__msg__Float32 *)msgin;
+      |                                        ^~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:773:31: warning: unused variable 'ret6' [-Wunused-variable]
+  773 |                     rcl_ret_t ret6 = rcl_publish(&publisher_heap_right_current, &msg_heap_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:770:31: warning: unused variable 'ret5' [-Wunused-variable]
+  770 |                     rcl_ret_t ret5 = rcl_publish(&publisher_heap_left_current, &msg_heap_left_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:768:31: warning: unused variable 'ret4' [-Wunused-variable]
+  768 |                     rcl_ret_t ret4 = rcl_publish(&publisher_knee_right_current, &msg_knee_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:766:31: warning: unused variable 'ret3' [-Wunused-variable]
+  766 |                     rcl_ret_t ret3 = rcl_publish(&publisher_knee_left_current, &msg_knee_left_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:764:31: warning: unused variable 'ret2' [-Wunused-variable]
+  764 |                     rcl_ret_t ret2 = rcl_publish(&publisher_ancle_right_current, &msg_ancle_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:761:35: warning: unused variable 'ret1' [-Wunused-variable]
+  761 |                         rcl_ret_t ret1 = rcl_publish(&publisher_ancle_left_current, &msg_ancle_left_current, NULL);
+      |                                   ^~~~
+arm-none-eabi-gcc -o "base_microros.elf" @"objects.list"  -lmicroros -mcpu=cortex-m7 -T"/home/guille/STM32CubeIDE/workspace_1.14.0/base_microros/STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="base_microros.map" -Wl,--gc-sections -static -L../micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+/opt/st/stm32cubeide_1.14.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.linux64_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld: /opt/st/stm32cubeide_1.14.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.linux64_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-gettimeofdayr.o): in function `_gettimeofday_r':
+(.text._gettimeofday_r+0xe): warning: _gettimeofday is not implemented and will always fail
+Finished building target: base_microros.elf
+ 
+arm-none-eabi-size  base_microros.elf 
+arm-none-eabi-objdump -h -S base_microros.elf  > "base_microros.list"
+   text	   data	    bss	    dec	    hex	filename
+ 101092	    604	  74744	 176440	  2b138	base_microros.elf
+Finished building: default.size.stdout
+ 
+Finished building: base_microros.list
+ 
+23:21:57 **** Incremental Build of configuration Debug for project base_microros ****
+make -j8 all 
+docker pull microros/micro_ros_static_library_builder:humble && docker run --rm -v /home/guille/STM32CubeIDE/workspace_1.14.0/base_microros:/project --env MICROROS_LIBRARY_FOLDER=micro_ros_stm32cubemx_utils/microros_static_library_ide microros/micro_ros_static_library_builder:humble
+humble: Pulling from microros/micro_ros_static_library_builder
+Digest: sha256:d73ee0cb5d320c42fab269f638e706b67123fe2e50fc13a25af02f739893ca4b
+Status: Image is up to date for microros/micro_ros_static_library_builder:humble
+docker.io/microros/micro_ros_static_library_builder:humble
+dos2unix: converting file /project/micro_ros_stm32cubemx_utils/microros_static_library_ide/library_generation/library_generation.sh to Unix format...
+micro-ROS library found. Skipping...
+Delete micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/ for rebuild.
+ 
+arm-none-eabi-size  base_microros.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 101092	    604	  74744	 176440	  2b138	base_microros.elf
+Finished building: default.size.stdout
+ 
+23:31:45 **** Incremental Build of configuration Debug for project base_microros ****
+make -j8 all 
+docker pull microros/micro_ros_static_library_builder:humble && docker run --rm -v /home/guille/STM32CubeIDE/workspace_1.14.0/base_microros:/project --env MICROROS_LIBRARY_FOLDER=micro_ros_stm32cubemx_utils/microros_static_library_ide microros/micro_ros_static_library_builder:humble
+humble: Pulling from microros/micro_ros_static_library_builder
+Digest: sha256:d73ee0cb5d320c42fab269f638e706b67123fe2e50fc13a25af02f739893ca4b
+Status: Image is up to date for microros/micro_ros_static_library_builder:humble
+docker.io/microros/micro_ros_static_library_builder:humble
+dos2unix: converting file /project/micro_ros_stm32cubemx_utils/microros_static_library_ide/library_generation/library_generation.sh to Unix format...
+micro-ROS library found. Skipping...
+Delete micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/ for rebuild.
+ 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'subscription_callback_ancle_left_reference':
+../Core/Src/main.c:63:40: warning: unused variable 'msg' [-Wunused-variable]
+   63 |         const std_msgs__msg__Float32 * msg = (const std_msgs__msg__Float32 *)msgin;
+      |                                        ^~~
+../Core/Src/main.c: In function 'subscription_callback_knee_left_reference':
+../Core/Src/main.c:77:40: warning: unused variable 'msg' [-Wunused-variable]
+   77 |         const std_msgs__msg__Float32 * msg = (const std_msgs__msg__Float32 *)msgin;
+      |                                        ^~~
+../Core/Src/main.c: In function 'subscription_callback_heap_left_reference':
+../Core/Src/main.c:90:40: warning: unused variable 'msg' [-Wunused-variable]
+   90 |         const std_msgs__msg__Float32 * msg = (const std_msgs__msg__Float32 *)msgin;
+      |                                        ^~~
+../Core/Src/main.c: In function 'subscription_callback_aux_id_left_reference':
+../Core/Src/main.c:103:40: warning: unused variable 'msg' [-Wunused-variable]
+  103 |         const std_msgs__msg__Float32 * msg = (const std_msgs__msg__Float32 *)msgin;
+      |                                        ^~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:797:31: warning: unused variable 'ret6' [-Wunused-variable]
+  797 |                     rcl_ret_t ret6 = rcl_publish(&publisher_heap_right_current, &msg_heap_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:794:31: warning: unused variable 'ret5' [-Wunused-variable]
+  794 |                     rcl_ret_t ret5 = rcl_publish(&publisher_heap_left_current, &msg_heap_left_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:792:31: warning: unused variable 'ret4' [-Wunused-variable]
+  792 |                     rcl_ret_t ret4 = rcl_publish(&publisher_knee_right_current, &msg_knee_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:790:31: warning: unused variable 'ret3' [-Wunused-variable]
+  790 |                     rcl_ret_t ret3 = rcl_publish(&publisher_knee_left_current, &msg_knee_left_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:788:31: warning: unused variable 'ret2' [-Wunused-variable]
+  788 |                     rcl_ret_t ret2 = rcl_publish(&publisher_ancle_right_current, &msg_ancle_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:785:35: warning: unused variable 'ret1' [-Wunused-variable]
+  785 |                         rcl_ret_t ret1 = rcl_publish(&publisher_ancle_left_current, &msg_ancle_left_current, NULL);
+      |                                   ^~~~
+arm-none-eabi-gcc -o "base_microros.elf" @"objects.list"  -lmicroros -mcpu=cortex-m7 -T"/home/guille/STM32CubeIDE/workspace_1.14.0/base_microros/STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="base_microros.map" -Wl,--gc-sections -static -L../micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+/opt/st/stm32cubeide_1.14.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.linux64_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld: /opt/st/stm32cubeide_1.14.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.linux64_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-gettimeofdayr.o): in function `_gettimeofday_r':
+(.text._gettimeofday_r+0xe): warning: _gettimeofday is not implemented and will always fail
+Finished building target: base_microros.elf
+ 
+arm-none-eabi-size  base_microros.elf 
+arm-none-eabi-objdump -h -S base_microros.elf  > "base_microros.list"
+   text	   data	    bss	    dec	    hex	filename
+ 101236	    604	  74760	 176600	  2b1d8	base_microros.elf
+Finished building: default.size.stdout
+ 
+Finished building: base_microros.list
+ 
+23:34:02 **** Incremental Build of configuration Debug for project base_microros ****
+make -j8 all 
+docker pull microros/micro_ros_static_library_builder:humble && docker run --rm -v /home/guille/STM32CubeIDE/workspace_1.14.0/base_microros:/project --env MICROROS_LIBRARY_FOLDER=micro_ros_stm32cubemx_utils/microros_static_library_ide microros/micro_ros_static_library_builder:humble
+humble: Pulling from microros/micro_ros_static_library_builder
+Digest: sha256:d73ee0cb5d320c42fab269f638e706b67123fe2e50fc13a25af02f739893ca4b
+Status: Image is up to date for microros/micro_ros_static_library_builder:humble
+docker.io/microros/micro_ros_static_library_builder:humble
+dos2unix: converting file /project/micro_ros_stm32cubemx_utils/microros_static_library_ide/library_generation/library_generation.sh to Unix format...
+micro-ROS library found. Skipping...
+Delete micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/ for rebuild.
+ 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'subscription_callback_ancle_left_reference':
+../Core/Src/main.c:63:40: warning: unused variable 'msg' [-Wunused-variable]
+   63 |         const std_msgs__msg__Float32 * msg = (const std_msgs__msg__Float32 *)msgin;
+      |                                        ^~~
+../Core/Src/main.c: In function 'subscription_callback_knee_left_reference':
+../Core/Src/main.c:77:40: warning: unused variable 'msg' [-Wunused-variable]
+   77 |         const std_msgs__msg__Float32 * msg = (const std_msgs__msg__Float32 *)msgin;
+      |                                        ^~~
+../Core/Src/main.c: In function 'subscription_callback_heap_left_reference':
+../Core/Src/main.c:90:40: warning: unused variable 'msg' [-Wunused-variable]
+   90 |         const std_msgs__msg__Float32 * msg = (const std_msgs__msg__Float32 *)msgin;
+      |                                        ^~~
+../Core/Src/main.c: In function 'subscription_callback_aux_id_left_reference':
+../Core/Src/main.c:103:40: warning: unused variable 'msg' [-Wunused-variable]
+  103 |         const std_msgs__msg__Float32 * msg = (const std_msgs__msg__Float32 *)msgin;
+      |                                        ^~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:797:31: warning: unused variable 'ret6' [-Wunused-variable]
+  797 |                     rcl_ret_t ret6 = rcl_publish(&publisher_heap_right_current, &msg_heap_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:794:31: warning: unused variable 'ret5' [-Wunused-variable]
+  794 |                     rcl_ret_t ret5 = rcl_publish(&publisher_heap_left_current, &msg_heap_left_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:792:31: warning: unused variable 'ret4' [-Wunused-variable]
+  792 |                     rcl_ret_t ret4 = rcl_publish(&publisher_knee_right_current, &msg_knee_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:790:31: warning: unused variable 'ret3' [-Wunused-variable]
+  790 |                     rcl_ret_t ret3 = rcl_publish(&publisher_knee_left_current, &msg_knee_left_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:788:31: warning: unused variable 'ret2' [-Wunused-variable]
+  788 |                     rcl_ret_t ret2 = rcl_publish(&publisher_ancle_right_current, &msg_ancle_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:785:35: warning: unused variable 'ret1' [-Wunused-variable]
+  785 |                         rcl_ret_t ret1 = rcl_publish(&publisher_ancle_left_current, &msg_ancle_left_current, NULL);
+      |                                   ^~~~
+arm-none-eabi-gcc -o "base_microros.elf" @"objects.list"  -lmicroros -mcpu=cortex-m7 -T"/home/guille/STM32CubeIDE/workspace_1.14.0/base_microros/STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="base_microros.map" -Wl,--gc-sections -static -L../micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+/opt/st/stm32cubeide_1.14.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.linux64_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld: /opt/st/stm32cubeide_1.14.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.linux64_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-gettimeofdayr.o): in function `_gettimeofday_r':
+(.text._gettimeofday_r+0xe): warning: _gettimeofday is not implemented and will always fail
+Finished building target: base_microros.elf
+ 
+arm-none-eabi-size  base_microros.elf 
+arm-none-eabi-objdump -h -S base_microros.elf  > "base_microros.list"
+   text	   data	    bss	    dec	    hex	filename
+ 101236	    604	  74760	 176600	  2b1d8	base_microros.elf
+Finished building: default.size.stdout
+ 
+Finished building: base_microros.list
+ 
+23:38:29 **** Incremental Build of configuration Debug for project base_microros ****
+make -j8 all 
+docker pull microros/micro_ros_static_library_builder:humble && docker run --rm -v /home/guille/STM32CubeIDE/workspace_1.14.0/base_microros:/project --env MICROROS_LIBRARY_FOLDER=micro_ros_stm32cubemx_utils/microros_static_library_ide microros/micro_ros_static_library_builder:humble
+humble: Pulling from microros/micro_ros_static_library_builder
+Digest: sha256:d73ee0cb5d320c42fab269f638e706b67123fe2e50fc13a25af02f739893ca4b
+Status: Image is up to date for microros/micro_ros_static_library_builder:humble
+docker.io/microros/micro_ros_static_library_builder:humble
+dos2unix: converting file /project/micro_ros_stm32cubemx_utils/microros_static_library_ide/library_generation/library_generation.sh to Unix format...
+micro-ROS library found. Skipping...
+Delete micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/ for rebuild.
+ 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'subscription_callback_ancle_left_reference':
+../Core/Src/main.c:63:40: warning: unused variable 'msg' [-Wunused-variable]
+   63 |         const std_msgs__msg__Float32 * msg = (const std_msgs__msg__Float32 *)msgin;
+      |                                        ^~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:799:31: warning: unused variable 'ret6' [-Wunused-variable]
+  799 |                     rcl_ret_t ret6 = rcl_publish(&publisher_heap_right_current, &msg_heap_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:796:31: warning: unused variable 'ret5' [-Wunused-variable]
+  796 |                     rcl_ret_t ret5 = rcl_publish(&publisher_heap_left_current, &msg_heap_left_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:794:31: warning: unused variable 'ret4' [-Wunused-variable]
+  794 |                     rcl_ret_t ret4 = rcl_publish(&publisher_knee_right_current, &msg_knee_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:792:31: warning: unused variable 'ret3' [-Wunused-variable]
+  792 |                     rcl_ret_t ret3 = rcl_publish(&publisher_knee_left_current, &msg_knee_left_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:790:31: warning: unused variable 'ret2' [-Wunused-variable]
+  790 |                     rcl_ret_t ret2 = rcl_publish(&publisher_ancle_right_current, &msg_ancle_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:787:35: warning: unused variable 'ret1' [-Wunused-variable]
+  787 |                         rcl_ret_t ret1 = rcl_publish(&publisher_ancle_left_current, &msg_ancle_left_current, NULL);
+      |                                   ^~~~
+arm-none-eabi-gcc -o "base_microros.elf" @"objects.list"  -lmicroros -mcpu=cortex-m7 -T"/home/guille/STM32CubeIDE/workspace_1.14.0/base_microros/STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="base_microros.map" -Wl,--gc-sections -static -L../micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+/opt/st/stm32cubeide_1.14.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.linux64_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld: /opt/st/stm32cubeide_1.14.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.linux64_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-gettimeofdayr.o): in function `_gettimeofday_r':
+(.text._gettimeofday_r+0xe): warning: _gettimeofday is not implemented and will always fail
+Finished building target: base_microros.elf
+ 
+arm-none-eabi-size  base_microros.elf 
+arm-none-eabi-objdump -h -S base_microros.elf  > "base_microros.list"
+   text	   data	    bss	    dec	    hex	filename
+ 101284	    604	  74760	 176648	  2b208	base_microros.elf
+Finished building: default.size.stdout
+ 
+Finished building: base_microros.list
+ 
+23:41:01 **** Incremental Build of configuration Debug for project base_microros ****
+make -j8 all 
+docker pull microros/micro_ros_static_library_builder:humble && docker run --rm -v /home/guille/STM32CubeIDE/workspace_1.14.0/base_microros:/project --env MICROROS_LIBRARY_FOLDER=micro_ros_stm32cubemx_utils/microros_static_library_ide microros/micro_ros_static_library_builder:humble
+humble: Pulling from microros/micro_ros_static_library_builder
+Digest: sha256:d73ee0cb5d320c42fab269f638e706b67123fe2e50fc13a25af02f739893ca4b
+Status: Image is up to date for microros/micro_ros_static_library_builder:humble
+docker.io/microros/micro_ros_static_library_builder:humble
+dos2unix: converting file /project/micro_ros_stm32cubemx_utils/microros_static_library_ide/library_generation/library_generation.sh to Unix format...
+micro-ROS library found. Skipping...
+Delete micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/ for rebuild.
+ 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'subscription_callback_ancle_left_reference':
+../Core/Src/main.c:63:40: warning: unused variable 'msg' [-Wunused-variable]
+   63 |         const std_msgs__msg__Float32 * msg = (const std_msgs__msg__Float32 *)msgin;
+      |                                        ^~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:799:31: warning: unused variable 'ret6' [-Wunused-variable]
+  799 |                     rcl_ret_t ret6 = rcl_publish(&publisher_heap_right_current, &msg_heap_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:796:31: warning: unused variable 'ret5' [-Wunused-variable]
+  796 |                     rcl_ret_t ret5 = rcl_publish(&publisher_heap_left_current, &msg_heap_left_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:794:31: warning: unused variable 'ret4' [-Wunused-variable]
+  794 |                     rcl_ret_t ret4 = rcl_publish(&publisher_knee_right_current, &msg_knee_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:792:31: warning: unused variable 'ret3' [-Wunused-variable]
+  792 |                     rcl_ret_t ret3 = rcl_publish(&publisher_knee_left_current, &msg_knee_left_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:790:31: warning: unused variable 'ret2' [-Wunused-variable]
+  790 |                     rcl_ret_t ret2 = rcl_publish(&publisher_ancle_right_current, &msg_ancle_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:787:35: warning: unused variable 'ret1' [-Wunused-variable]
+  787 |                         rcl_ret_t ret1 = rcl_publish(&publisher_ancle_left_current, &msg_ancle_left_current, NULL);
+      |                                   ^~~~
+arm-none-eabi-gcc -o "base_microros.elf" @"objects.list"  -lmicroros -mcpu=cortex-m7 -T"/home/guille/STM32CubeIDE/workspace_1.14.0/base_microros/STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="base_microros.map" -Wl,--gc-sections -static -L../micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+/opt/st/stm32cubeide_1.14.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.linux64_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld: /opt/st/stm32cubeide_1.14.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.linux64_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-gettimeofdayr.o): in function `_gettimeofday_r':
+(.text._gettimeofday_r+0xe): warning: _gettimeofday is not implemented and will always fail
+Finished building target: base_microros.elf
+ 
+arm-none-eabi-size  base_microros.elf 
+arm-none-eabi-objdump -h -S base_microros.elf  > "base_microros.list"
+   text	   data	    bss	    dec	    hex	filename
+ 101284	    604	  74760	 176648	  2b208	base_microros.elf
+Finished building: default.size.stdout
+ 
+Finished building: base_microros.list
+ 
+23:44:38 **** Incremental Build of configuration Debug for project base_microros ****
+make -j8 all 
+docker pull microros/micro_ros_static_library_builder:humble && docker run --rm -v /home/guille/STM32CubeIDE/workspace_1.14.0/base_microros:/project --env MICROROS_LIBRARY_FOLDER=micro_ros_stm32cubemx_utils/microros_static_library_ide microros/micro_ros_static_library_builder:humble
+humble: Pulling from microros/micro_ros_static_library_builder
+Digest: sha256:d73ee0cb5d320c42fab269f638e706b67123fe2e50fc13a25af02f739893ca4b
+Status: Image is up to date for microros/micro_ros_static_library_builder:humble
+docker.io/microros/micro_ros_static_library_builder:humble
+dos2unix: converting file /project/micro_ros_stm32cubemx_utils/microros_static_library_ide/library_generation/library_generation.sh to Unix format...
+micro-ROS library found. Skipping...
+Delete micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/ for rebuild.
+ 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'subscription_callback_ancle_left_reference':
+../Core/Src/main.c:63:40: warning: unused variable 'msg' [-Wunused-variable]
+   63 |         const std_msgs__msg__Float32 * msg = (const std_msgs__msg__Float32 *)msgin;
+      |                                        ^~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:799:31: warning: unused variable 'ret6' [-Wunused-variable]
+  799 |                     rcl_ret_t ret6 = rcl_publish(&publisher_heap_right_current, &msg_heap_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:796:31: warning: unused variable 'ret5' [-Wunused-variable]
+  796 |                     rcl_ret_t ret5 = rcl_publish(&publisher_heap_left_current, &msg_heap_left_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:794:31: warning: unused variable 'ret4' [-Wunused-variable]
+  794 |                     rcl_ret_t ret4 = rcl_publish(&publisher_knee_right_current, &msg_knee_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:792:31: warning: unused variable 'ret3' [-Wunused-variable]
+  792 |                     rcl_ret_t ret3 = rcl_publish(&publisher_knee_left_current, &msg_knee_left_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:787:35: warning: unused variable 'ret1' [-Wunused-variable]
+  787 |                         rcl_ret_t ret1 = rcl_publish(&publisher_ancle_left_current, &msg_ancle_left_current, NULL);
+      |                                   ^~~~
+../Core/Src/main.c:615:34: warning: variable 'msg_ancle_right_current' set but not used [-Wunused-but-set-variable]
+  615 |           std_msgs__msg__Float32 msg_ancle_right_current;
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "base_microros.elf" @"objects.list"  -lmicroros -mcpu=cortex-m7 -T"/home/guille/STM32CubeIDE/workspace_1.14.0/base_microros/STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="base_microros.map" -Wl,--gc-sections -static -L../micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+/opt/st/stm32cubeide_1.14.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.linux64_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld: /opt/st/stm32cubeide_1.14.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.linux64_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-gettimeofdayr.o): in function `_gettimeofday_r':
+(.text._gettimeofday_r+0xe): warning: _gettimeofday is not implemented and will always fail
+Finished building target: base_microros.elf
+ 
+arm-none-eabi-size  base_microros.elf 
+arm-none-eabi-objdump -h -S base_microros.elf  > "base_microros.list"
+   text	   data	    bss	    dec	    hex	filename
+ 101268	    604	  74760	 176632	  2b1f8	base_microros.elf
+Finished building: default.size.stdout
+ 
+Finished building: base_microros.list
+ 
+23:46:08 **** Incremental Build of configuration Debug for project base_microros ****
+make -j8 all 
+docker pull microros/micro_ros_static_library_builder:humble && docker run --rm -v /home/guille/STM32CubeIDE/workspace_1.14.0/base_microros:/project --env MICROROS_LIBRARY_FOLDER=micro_ros_stm32cubemx_utils/microros_static_library_ide microros/micro_ros_static_library_builder:humble
+humble: Pulling from microros/micro_ros_static_library_builder
+Digest: sha256:d73ee0cb5d320c42fab269f638e706b67123fe2e50fc13a25af02f739893ca4b
+Status: Image is up to date for microros/micro_ros_static_library_builder:humble
+docker.io/microros/micro_ros_static_library_builder:humble
+dos2unix: converting file /project/micro_ros_stm32cubemx_utils/microros_static_library_ide/library_generation/library_generation.sh to Unix format...
+micro-ROS library found. Skipping...
+Delete micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/ for rebuild.
+ 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'subscription_callback_ancle_left_reference':
+../Core/Src/main.c:63:40: warning: unused variable 'msg' [-Wunused-variable]
+   63 |         const std_msgs__msg__Float32 * msg = (const std_msgs__msg__Float32 *)msgin;
+      |                                        ^~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:799:31: warning: unused variable 'ret6' [-Wunused-variable]
+  799 |                     rcl_ret_t ret6 = rcl_publish(&publisher_heap_right_current, &msg_heap_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:796:31: warning: unused variable 'ret5' [-Wunused-variable]
+  796 |                     rcl_ret_t ret5 = rcl_publish(&publisher_heap_left_current, &msg_heap_left_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:794:31: warning: unused variable 'ret4' [-Wunused-variable]
+  794 |                     rcl_ret_t ret4 = rcl_publish(&publisher_knee_right_current, &msg_knee_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:792:31: warning: unused variable 'ret3' [-Wunused-variable]
+  792 |                     rcl_ret_t ret3 = rcl_publish(&publisher_knee_left_current, &msg_knee_left_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:790:31: warning: unused variable 'ret2' [-Wunused-variable]
+  790 |                     rcl_ret_t ret2 = rcl_publish(&publisher_ancle_right_current, &msg_ancle_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:787:35: warning: unused variable 'ret1' [-Wunused-variable]
+  787 |                         rcl_ret_t ret1 = rcl_publish(&publisher_ancle_left_current, &msg_ancle_left_current, NULL);
+      |                                   ^~~~
+arm-none-eabi-gcc -o "base_microros.elf" @"objects.list"  -lmicroros -mcpu=cortex-m7 -T"/home/guille/STM32CubeIDE/workspace_1.14.0/base_microros/STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="base_microros.map" -Wl,--gc-sections -static -L../micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+/opt/st/stm32cubeide_1.14.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.linux64_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld: /opt/st/stm32cubeide_1.14.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.linux64_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-gettimeofdayr.o): in function `_gettimeofday_r':
+(.text._gettimeofday_r+0xe): warning: _gettimeofday is not implemented and will always fail
+Finished building target: base_microros.elf
+ 
+arm-none-eabi-size  base_microros.elf 
+arm-none-eabi-objdump -h -S base_microros.elf  > "base_microros.list"
+   text	   data	    bss	    dec	    hex	filename
+ 101284	    604	  72760	 174648	  2aa38	base_microros.elf
+Finished building: default.size.stdout
+ 
+Finished building: base_microros.list
+ 
+23:48:54 **** Incremental Build of configuration Debug for project base_microros ****
+make -j8 all 
+docker pull microros/micro_ros_static_library_builder:humble && docker run --rm -v /home/guille/STM32CubeIDE/workspace_1.14.0/base_microros:/project --env MICROROS_LIBRARY_FOLDER=micro_ros_stm32cubemx_utils/microros_static_library_ide microros/micro_ros_static_library_builder:humble
+humble: Pulling from microros/micro_ros_static_library_builder
+Digest: sha256:d73ee0cb5d320c42fab269f638e706b67123fe2e50fc13a25af02f739893ca4b
+Status: Image is up to date for microros/micro_ros_static_library_builder:humble
+docker.io/microros/micro_ros_static_library_builder:humble
+dos2unix: converting file /project/micro_ros_stm32cubemx_utils/microros_static_library_ide/library_generation/library_generation.sh to Unix format...
+micro-ROS library found. Skipping...
+Delete micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/ for rebuild.
+ 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'subscription_callback_ancle_left_reference':
+../Core/Src/main.c:63:40: warning: unused variable 'msg' [-Wunused-variable]
+   63 |         const std_msgs__msg__Float32 * msg = (const std_msgs__msg__Float32 *)msgin;
+      |                                        ^~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:799:31: warning: unused variable 'ret6' [-Wunused-variable]
+  799 |                     rcl_ret_t ret6 = rcl_publish(&publisher_heap_right_current, &msg_heap_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:796:31: warning: unused variable 'ret5' [-Wunused-variable]
+  796 |                     rcl_ret_t ret5 = rcl_publish(&publisher_heap_left_current, &msg_heap_left_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:794:31: warning: unused variable 'ret4' [-Wunused-variable]
+  794 |                     rcl_ret_t ret4 = rcl_publish(&publisher_knee_right_current, &msg_knee_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:792:31: warning: unused variable 'ret3' [-Wunused-variable]
+  792 |                     rcl_ret_t ret3 = rcl_publish(&publisher_knee_left_current, &msg_knee_left_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:790:31: warning: unused variable 'ret2' [-Wunused-variable]
+  790 |                     rcl_ret_t ret2 = rcl_publish(&publisher_ancle_right_current, &msg_ancle_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:787:35: warning: unused variable 'ret1' [-Wunused-variable]
+  787 |                         rcl_ret_t ret1 = rcl_publish(&publisher_ancle_left_current, &msg_ancle_left_current, NULL);
+      |                                   ^~~~
+arm-none-eabi-gcc -o "base_microros.elf" @"objects.list"  -lmicroros -mcpu=cortex-m7 -T"/home/guille/STM32CubeIDE/workspace_1.14.0/base_microros/STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="base_microros.map" -Wl,--gc-sections -static -L../micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+/opt/st/stm32cubeide_1.14.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.linux64_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld: /opt/st/stm32cubeide_1.14.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.linux64_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-gettimeofdayr.o): in function `_gettimeofday_r':
+(.text._gettimeofday_r+0xe): warning: _gettimeofday is not implemented and will always fail
+Finished building target: base_microros.elf
+ 
+arm-none-eabi-size  base_microros.elf 
+arm-none-eabi-objdump -h -S base_microros.elf  > "base_microros.list"
+   text	   data	    bss	    dec	    hex	filename
+ 101284	    604	  72760	 174648	  2aa38	base_microros.elf
+Finished building: default.size.stdout
+ 
+Finished building: base_microros.list
+ 
+23:49:36 **** Incremental Build of configuration Debug for project base_microros ****
+make -j8 all 
+docker pull microros/micro_ros_static_library_builder:humble && docker run --rm -v /home/guille/STM32CubeIDE/workspace_1.14.0/base_microros:/project --env MICROROS_LIBRARY_FOLDER=micro_ros_stm32cubemx_utils/microros_static_library_ide microros/micro_ros_static_library_builder:humble
+humble: Pulling from microros/micro_ros_static_library_builder
+Digest: sha256:d73ee0cb5d320c42fab269f638e706b67123fe2e50fc13a25af02f739893ca4b
+Status: Image is up to date for microros/micro_ros_static_library_builder:humble
+docker.io/microros/micro_ros_static_library_builder:humble
+dos2unix: converting file /project/micro_ros_stm32cubemx_utils/microros_static_library_ide/library_generation/library_generation.sh to Unix format...
+micro-ROS library found. Skipping...
+Delete micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/ for rebuild.
+ 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'subscription_callback_ancle_left_reference':
+../Core/Src/main.c:63:40: warning: unused variable 'msg' [-Wunused-variable]
+   63 |         const std_msgs__msg__Float32 * msg = (const std_msgs__msg__Float32 *)msgin;
+      |                                        ^~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:801:31: warning: unused variable 'ret6' [-Wunused-variable]
+  801 |                     rcl_ret_t ret6 = rcl_publish(&publisher_heap_right_current, &msg_heap_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:798:31: warning: unused variable 'ret5' [-Wunused-variable]
+  798 |                     rcl_ret_t ret5 = rcl_publish(&publisher_heap_left_current, &msg_heap_left_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:796:31: warning: unused variable 'ret4' [-Wunused-variable]
+  796 |                     rcl_ret_t ret4 = rcl_publish(&publisher_knee_right_current, &msg_knee_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:794:31: warning: unused variable 'ret3' [-Wunused-variable]
+  794 |                     rcl_ret_t ret3 = rcl_publish(&publisher_knee_left_current, &msg_knee_left_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:792:31: warning: unused variable 'ret2' [-Wunused-variable]
+  792 |                     rcl_ret_t ret2 = rcl_publish(&publisher_ancle_right_current, &msg_ancle_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:789:35: warning: unused variable 'ret1' [-Wunused-variable]
+  789 |                         rcl_ret_t ret1 = rcl_publish(&publisher_ancle_left_current, &msg_ancle_left_current, NULL);
+      |                                   ^~~~
+arm-none-eabi-gcc -o "base_microros.elf" @"objects.list"  -lmicroros -mcpu=cortex-m7 -T"/home/guille/STM32CubeIDE/workspace_1.14.0/base_microros/STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="base_microros.map" -Wl,--gc-sections -static -L../micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+/opt/st/stm32cubeide_1.14.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.linux64_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld: /opt/st/stm32cubeide_1.14.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.linux64_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-gettimeofdayr.o): in function `_gettimeofday_r':
+(.text._gettimeofday_r+0xe): warning: _gettimeofday is not implemented and will always fail
+Finished building target: base_microros.elf
+ 
+arm-none-eabi-size  base_microros.elf 
+arm-none-eabi-objdump -h -S base_microros.elf  > "base_microros.list"
+   text	   data	    bss	    dec	    hex	filename
+ 101284	    604	  72760	 174648	  2aa38	base_microros.elf
+Finished building: default.size.stdout
+ 
+Finished building: base_microros.list
+ 
+23:51:28 **** Incremental Build of configuration Debug for project base_microros ****
+make -j8 all 
+docker pull microros/micro_ros_static_library_builder:humble && docker run --rm -v /home/guille/STM32CubeIDE/workspace_1.14.0/base_microros:/project --env MICROROS_LIBRARY_FOLDER=micro_ros_stm32cubemx_utils/microros_static_library_ide microros/micro_ros_static_library_builder:humble
+humble: Pulling from microros/micro_ros_static_library_builder
+Digest: sha256:d73ee0cb5d320c42fab269f638e706b67123fe2e50fc13a25af02f739893ca4b
+Status: Image is up to date for microros/micro_ros_static_library_builder:humble
+docker.io/microros/micro_ros_static_library_builder:humble
+dos2unix: converting file /project/micro_ros_stm32cubemx_utils/microros_static_library_ide/library_generation/library_generation.sh to Unix format...
+micro-ROS library found. Skipping...
+Delete micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/ for rebuild.
+ 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'subscription_callback_ancle_left_reference':
+../Core/Src/main.c:63:40: warning: unused variable 'msg' [-Wunused-variable]
+   63 |         const std_msgs__msg__Float32 * msg = (const std_msgs__msg__Float32 *)msgin;
+      |                                        ^~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:786:31: warning: unused variable 'ret6' [-Wunused-variable]
+  786 |                     rcl_ret_t ret6 = rcl_publish(&publisher_heap_right_current, &msg_heap_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:783:31: warning: unused variable 'ret5' [-Wunused-variable]
+  783 |                     rcl_ret_t ret5 = rcl_publish(&publisher_heap_left_current, &msg_heap_left_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:781:31: warning: unused variable 'ret4' [-Wunused-variable]
+  781 |                     rcl_ret_t ret4 = rcl_publish(&publisher_knee_right_current, &msg_knee_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:779:31: warning: unused variable 'ret3' [-Wunused-variable]
+  779 |                     rcl_ret_t ret3 = rcl_publish(&publisher_knee_left_current, &msg_knee_left_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:777:31: warning: unused variable 'ret2' [-Wunused-variable]
+  777 |                     rcl_ret_t ret2 = rcl_publish(&publisher_ancle_right_current, &msg_ancle_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:774:35: warning: unused variable 'ret1' [-Wunused-variable]
+  774 |                         rcl_ret_t ret1 = rcl_publish(&publisher_ancle_left_current, &msg_ancle_left_current, NULL);
+      |                                   ^~~~
+arm-none-eabi-gcc -o "base_microros.elf" @"objects.list"  -lmicroros -mcpu=cortex-m7 -T"/home/guille/STM32CubeIDE/workspace_1.14.0/base_microros/STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="base_microros.map" -Wl,--gc-sections -static -L../micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+/opt/st/stm32cubeide_1.14.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.linux64_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld: /opt/st/stm32cubeide_1.14.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.linux64_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-gettimeofdayr.o): in function `_gettimeofday_r':
+(.text._gettimeofday_r+0xe): warning: _gettimeofday is not implemented and will always fail
+Finished building target: base_microros.elf
+ 
+arm-none-eabi-size  base_microros.elf 
+arm-none-eabi-objdump -h -S base_microros.elf  > "base_microros.list"
+   text	   data	    bss	    dec	    hex	filename
+ 101140	    604	  72752	 174496	  2a9a0	base_microros.elf
+Finished building: default.size.stdout
+ 
+Finished building: base_microros.list
+ 
+23:52:54 **** Incremental Build of configuration Debug for project base_microros ****
+make -j8 all 
+docker pull microros/micro_ros_static_library_builder:humble && docker run --rm -v /home/guille/STM32CubeIDE/workspace_1.14.0/base_microros:/project --env MICROROS_LIBRARY_FOLDER=micro_ros_stm32cubemx_utils/microros_static_library_ide microros/micro_ros_static_library_builder:humble
+humble: Pulling from microros/micro_ros_static_library_builder
+Digest: sha256:d73ee0cb5d320c42fab269f638e706b67123fe2e50fc13a25af02f739893ca4b
+Status: Image is up to date for microros/micro_ros_static_library_builder:humble
+docker.io/microros/micro_ros_static_library_builder:humble
+dos2unix: converting file /project/micro_ros_stm32cubemx_utils/microros_static_library_ide/library_generation/library_generation.sh to Unix format...
+micro-ROS library found. Skipping...
+Delete micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/ for rebuild.
+ 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros/include -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'subscription_callback_ancle_left_reference':
+../Core/Src/main.c:63:40: warning: unused variable 'msg' [-Wunused-variable]
+   63 |         const std_msgs__msg__Float32 * msg = (const std_msgs__msg__Float32 *)msgin;
+      |                                        ^~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:784:31: warning: unused variable 'ret6' [-Wunused-variable]
+  784 |                     rcl_ret_t ret6 = rcl_publish(&publisher_heap_right_current, &msg_heap_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:781:31: warning: unused variable 'ret5' [-Wunused-variable]
+  781 |                     rcl_ret_t ret5 = rcl_publish(&publisher_heap_left_current, &msg_heap_left_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:779:31: warning: unused variable 'ret4' [-Wunused-variable]
+  779 |                     rcl_ret_t ret4 = rcl_publish(&publisher_knee_right_current, &msg_knee_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:777:31: warning: unused variable 'ret3' [-Wunused-variable]
+  777 |                     rcl_ret_t ret3 = rcl_publish(&publisher_knee_left_current, &msg_knee_left_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:775:31: warning: unused variable 'ret2' [-Wunused-variable]
+  775 |                     rcl_ret_t ret2 = rcl_publish(&publisher_ancle_right_current, &msg_ancle_right_current, NULL);
+      |                               ^~~~
+../Core/Src/main.c:772:35: warning: unused variable 'ret1' [-Wunused-variable]
+  772 |                         rcl_ret_t ret1 = rcl_publish(&publisher_ancle_left_current, &msg_ancle_left_current, NULL);
+      |                                   ^~~~
+arm-none-eabi-gcc -o "base_microros.elf" @"objects.list"  -lmicroros -mcpu=cortex-m7 -T"/home/guille/STM32CubeIDE/workspace_1.14.0/base_microros/STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="base_microros.map" -Wl,--gc-sections -static -L../micro_ros_stm32cubemx_utils/microros_static_library_ide/libmicroros --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+/opt/st/stm32cubeide_1.14.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.linux64_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld: /opt/st/stm32cubeide_1.14.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.linux64_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-gettimeofdayr.o): in function `_gettimeofday_r':
+(.text._gettimeofday_r+0xe): warning: _gettimeofday is not implemented and will always fail
+Finished building target: base_microros.elf
+ 
+arm-none-eabi-size  base_microros.elf 
+arm-none-eabi-objdump -h -S base_microros.elf  > "base_microros.list"
+   text	   data	    bss	    dec	    hex	filename
+ 101140	    604	  80752	 182496	  2c8e0	base_microros.elf
+Finished building: default.size.stdout
+ 
+Finished building: base_microros.list
+ 

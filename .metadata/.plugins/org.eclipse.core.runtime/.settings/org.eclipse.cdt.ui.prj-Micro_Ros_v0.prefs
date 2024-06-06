@@ -1,0 +1,3 @@
+buildConsole/keepLog=true
+buildConsole/logLocation=/home/guille/STM32CubeIDE/workspace_1.14.0/.metadata/.plugins/org.eclipse.cdt.ui/Micro_Ros_v0.build.log
+eclipse.preferences.version=1
